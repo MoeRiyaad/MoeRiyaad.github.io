@@ -682,12 +682,17 @@
     })
     .then(() => {
       document.querySelector(".sent-message").style.display = "block";
+      document.querySelector(".error-message").style.display = "none";
+      document.getElementById("contact-form").reset(); // Optional: reset form after success
     }, (error) => {
       document.querySelector(".error-message").innerText = "Error: " + error.text;
+      document.querySelector(".error-message").style.display = "block";
+      document.querySelector(".sent-message").style.display = "none";
     });
   }
 
-  document.querySelector("#contact-form").addEventListener("submit", sendEmail);
+  document.getElementById("contact-form").addEventListener("submit", sendEmail);
+
 </script>
       </div>
 
