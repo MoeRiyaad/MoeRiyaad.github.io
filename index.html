@@ -1,21 +1,64 @@
-<div style="text-align: center; font-family: 'Segoe UI', sans-serif; padding: 5vh 4vw;">
-  <h1 style="font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 0.5em;">
-    <a href="https://moeriyaad.github.io/"
-       style="text-decoration: none; color: #0d6efd; transition: color 0.3s ease;">
-      MoeRiyaad
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoeRiyaad Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 5vh 4vw;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 0.5em;
+    }
+
+    h1 a {
+      text-decoration: none;
+      color: #0d6efd;
+      transition: color 0.3s ease;
+    }
+
+    h2 {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+      color: #444;
+      margin-bottom: 1.5em;
+    }
+
+    a.portfolio-btn {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background-color: #0d6efd;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    a.portfolio-btn:hover {
+      background-color: #0b5ed7;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <a href="https://moeriyaad.github.io/">MoeRiyaad</a>
   </h1>
 
-  <h2 style="font-size: clamp(1.25rem, 4vw, 1.5rem); color: #444; margin-bottom: 1.5em;">
-    MoeRiyaad.github.io
-  </h2>
+  <h2>MoeRiyaad.github.io</h2>
 
   <p>
-    <a href="MoeRiyaad_Portfolio/index.html"
-       style="display: inline-block; padding: 0.75em 1.5em; background-color: #0d6efd; color: #fff;
-              border-radius: 8px; text-decoration: none; font-weight: bold;
-              transition: background-color 0.3s ease, transform 0.2s ease;">
-      Visit My Portfolio
-    </a>
+    <a class="portfolio-btn" href="MoeRiyaad_Portfolio/index.html">Visit My Portfolio</a>
   </p>
-</div>
+
+</body>
+</html>
