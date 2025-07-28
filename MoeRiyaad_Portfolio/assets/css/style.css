@@ -1023,28 +1023,63 @@ section {
 #footer .social-links {
   margin: 0 0 40px 0;
 }
-#footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #0563bb;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 8px;
+  background-color: #0073b1;
   border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-#footer .social-links a:hover {
-  background: #0678e3;
   color: #fff;
+  transition: transform 0.3s ease;
   text-decoration: none;
 }
+
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+.icon-wrapper img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* turns icon white */
+}
+
 #footer .copyright {
   margin: 0 0 5px 0;
 }
 #footer .credits {
   font-size: 13px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #0073b1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.indeed-icon svg {
+  width: 24px;
+  height: 24px;
 }
