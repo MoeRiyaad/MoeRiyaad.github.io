@@ -225,59 +225,27 @@
 
   });
   
-  document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("imgModal");
   const modalImg = document.getElementById("modalImg");
 
   // Click to enlarge
   document.querySelectorAll(".enlargeable").forEach(img => {
     img.addEventListener("click", () => {
-      modal.style.display = "block";
+      modal.classList.add("active");
       modalImg.src = img.src;
     });
   });
 
   // Click to close
   modal.addEventListener("click", () => {
-    modal.style.display = "none";
-    modalImg.src = ""; // clear for performance
+    modal.classList.remove("active");
+    modalImg.src = "";
   });
 });
 
-const images = document.querySelectorAll('.enlargeable');
-const modal = document.getElementById('imgModal');
-const modalImg = document.getElementById('modalImg');
-const closeModal = document.getElementById('closeModal');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
 
-let currentIndex = 0;
 
-// Open modal and show clicked image
-images.forEach((img, i) => {
-  img.addEventListener('click', () => {
-    currentIndex = i;
-    modalImg.src = img.src;
-    modal.style.display = 'block';
-  });
-});
-
-// Close modal
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-// Navigate to next image
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  modalImg.src = images[currentIndex].src;
-});
-
-// Navigate to previous image
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImg.src = images[currentIndex].src;
-});
 
   
   /**
