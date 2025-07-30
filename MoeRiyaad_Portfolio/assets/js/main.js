@@ -224,6 +224,27 @@
     }
 
   });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+
+  // Click to enlarge
+  document.querySelectorAll(".enlargeable").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  // Click to close
+  modal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalImg.src = ""; // clear for performance
+  });
+});
+
+  
   /**
    * Initiate portfolio lightbox 
    */
