@@ -198,6 +198,32 @@
 
   });
 
+ window.addEventListener('load', () => {
+    let portfolioContainer = select('.achievement-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.achievement-item'
+      });
+
+      let portfolioFilters = select('#achievement-flters li', true);
+
+      on('click', '#achievement-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
   /**
    * Initiate portfolio lightbox 
    */
