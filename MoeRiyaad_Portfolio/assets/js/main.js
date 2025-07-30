@@ -4,6 +4,37 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+(function () {
+  emailjs.init("service_0fyvksc"); // Replace with your actual User ID
+})();
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs.send("service_0fyvksc", "template_g3m07ml", {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  })
+  .then(() => {
+    document.querySelector(".sent-message").style.display = "block";
+    document.querySelector(".error-message").style.display = "none";
+    document.getElementById("contact-form").reset(); // Reset form after success
+  }, (error) => {
+    document.querySelector(".error-message").innerText = "Error: " + error.text;
+    document.querySelector(".error-message").style.display = "block";
+    document.querySelector(".sent-message").style.display = "none";
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", sendEmail);
+  }
+});
+
 (function() {
   "use strict";
 
