@@ -294,6 +294,10 @@ h1, h2, h3, h4, h5, h6 {
 #hero .social-links a:hover {
   color: #BCC2C2;
 }
+#hero .social-links a img {
+  filter: brightness(0) invert(1);
+}
+
 @media (max-width: 992px) {
   #hero {
     text-align: center;
